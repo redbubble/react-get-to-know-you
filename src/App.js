@@ -1,24 +1,31 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
+import 'normalize.css/normalize.css';
+import styles from './App.module.css';
+import Home from './Home';
+import TabComponent from './TabComponent';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={styles.app}>
+      <Router>
+        <nav className={styles.nav}>
+          <NavLink exact activeClassName={styles.activeNavLink} to="/">Instructions</NavLink>
+          <NavLink exact activeClassName={styles.activeNavLink} to="/tab-component">Your work</NavLink>
+        </nav>
+
+        <Route
+          exact
+          path="/tab-component"
+          component={TabComponent}
+        />
+
+        <Route
+          exact
+          path="/"
+          component={Home}
+        />
+      </Router>
     </div>
   );
 }

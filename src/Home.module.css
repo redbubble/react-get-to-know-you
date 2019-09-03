@@ -1,0 +1,181 @@
+.section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--dimension-04);
+}
+
+.list,
+.text {
+  display: block;
+  max-width: 768px;
+  margin-bottom: var(--dimension-04);
+  margin-top: 0;
+  line-height: var(--lineHeight-small);
+}
+
+.list li {
+  margin-bottom: var(--dimension-03);
+}
+
+.dialog {
+  width: 100%;
+  display: block;
+}
+
+.attachments {
+  display: flex;
+  margin-top: var(--dimension-04);
+}
+
+.attachments a {
+  margin-right: var(--dimension-04);
+  width: 200px;
+  height: 130px;
+  display: block;
+  border-radius: var(--radius-medium);
+  background-size: cover;
+  border: var(--border-hairline);
+  position: relative;
+  color: var(--color-text);
+}
+
+.attachments a > span {
+  background: var(--color-white);
+  border: var(--border-small);
+  border-radius: var(--radius-small);
+  position: absolute;
+  font-size: var(--fontSize-small);
+  top: 4px;
+  padding: var(--dimension-01);
+  right: 4px;
+}
+
+.conversation {
+  margin-top: var(--dimension-06);
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .conversation {
+    padding: var(--dimension-06);
+  }
+}
+
+.speech {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: var(--dimension-06);
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.speech:last-child {
+  margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+  .speech {
+    flex-wrap: nowrap;
+  }
+}
+
+.speechBody {
+  flex: 1;
+  width: 100%;
+}
+
+.speechBubble {
+  width: 100%;
+  border: var(--border-hairline);
+  border-radius: var(--radius-medium);
+  overflow: hidden;
+}
+
+.speech.reverse {
+  flex-direction: row-reverse;
+}
+
+.speechCharacter {
+  width: 60px;
+  height: 60px;
+  border-radius: 500vh;
+  overflow: hidden;
+  border: var(--border-hairline);
+  margin-bottom: var(--dimension-05);
+  position: absolute;
+  left: var(--dimension-04);
+  top: -10px;
+}
+
+@media (min-width: 768px) {
+  .speechCharacter {
+    width: 250px;
+    height: auto;
+    border-radius: 0;
+    overflow: visible;
+    border: none;
+    margin-bottom: 0px;
+    position: static;
+    left: 0px;
+    top: 0px;
+  }
+}
+
+.speechCharacter img {
+  width: 100%;
+  height: auto;
+}
+
+.speechContent {
+  min-width: 300px;
+  padding: var(--dimension-06);
+  font-size: 90%;
+}
+
+.speech.comment .speechContent {
+  padding: var(--dimension-04);
+}
+
+.speechContent p {
+  line-height: var(--lineHeight-medium);
+}
+
+.speechName {
+  line-height: var(--lineHeight-medium);
+  padding: var(--dimension-04) 0;
+  display: none;
+}
+
+.speechNameMobile {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .speechNameMobile {
+    display: none;
+  }
+
+  .speechName {
+    display: block;
+  }
+}
+
+.speech.reverse .speechName {
+  text-align: right;
+}
+
+.speechHeader {
+  border-bottom: var(--border-hairline);
+  height: var(--dimension-06);
+  background: var(--color-neutral-100);
+  padding-left: 90px;
+  display: flex;
+  align-items: center;
+  padding-right: var(--dimension-04);
+}
+
+
