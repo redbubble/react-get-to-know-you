@@ -9,15 +9,15 @@
   --color-black: #000;
   --color-neutral-100: #f2f2f6;
   --color-neutral-200: #d6dadf;
+  --color-neutral-500: #6e7582;
 
-  --lineHeight-small: 1.4;
   --lineHeight-medium: 1.6;
 
   --fontSize-small: 14px;
   --fontSize-medium: 16px;
 
-  --border-hairline: 1px solid var(--color-neutral-200);
-  --border-small: 2px solid var(--color-neutral-200);
+  --border-hairline: 1px solid var(--color-neutral-100);
+  --border-small: 2px solid var(--color-neutral-100);
 
   --dimension: 4px;
   --dimension-01: calc(var(--dimension) * 1); /* 4px */
@@ -28,12 +28,19 @@
   --dimension-06: calc(var(--dimension) * 8); /* 32px */
   --dimension-07: calc(var(--dimension) * 12); /* 48px */
 
+  --elevation-05: 0 8px 32px -12px rgba(0,0,0,0.4);
+
   --radius-small: 4px;
   --radius-medium: 8px;
+  --radius-circle: 100vh;
 }
 
 body {
   width: 100%;
+}
+
+a {
+  color: var(--color-primary);
 }
 
 .app {
@@ -43,20 +50,24 @@ body {
 
 .nav {
   width: 100%;
-  border-bottom: var(--border-hairline);
+  display: flex;
   padding: var(--dimension-04);
+  justify-content: center;
 }
 
 .nav a:link,
 .nav a:visited,
 .nav a:active {
-  margin-right: var(--dimension-04);
+  display: block;
   text-decoration: none;
   color: var(--color-text);
+  font-weight: bold;
+  padding: var(--dimension-02) var(--dimension-03);
+  font-size: var(--fontSize-small);
 }
 
 .nav a:hover {
-  text-decoration: underline;
+  color: var(--color-primary);
 }
 
 .nav a.activeNavLink {

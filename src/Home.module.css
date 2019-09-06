@@ -3,15 +3,31 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: var(--dimension-04);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: var(--dimension-04) var(--dimension-06);
+  }
 }
 
 .list,
 .text {
   display: block;
-  max-width: 768px;
+  max-width: 640px;
   margin-bottom: var(--dimension-04);
   margin-top: 0;
-  line-height: var(--lineHeight-small);
+  line-height: var(--lineHeight-medium);
+}
+
+.subHeading {
+  display: block;
+  font-size: var(--fontSize-medium);
+  /* font-weight: normal; */
+  color: var(--color-neutral-500);
 }
 
 .list li {
@@ -21,6 +37,17 @@
 .dialog {
   width: 100%;
   display: block;
+}
+
+.callout {
+  background: var(--color-neutral-100);
+  padding: var(--dimension-04);
+  border-radius: var(--radius-medium);
+  font-size: var(--fontSize-small);
+}
+
+.callout p:last-child {
+  margin-bottom: 0;
 }
 
 .attachments {
@@ -54,25 +81,58 @@
 .conversation {
   margin-top: var(--dimension-06);
   width: 100%;
+  background-color: var(--color-neutral-100);
+  padding: var(--dimension-06) var(--dimension-04);
 }
 
-@media (min-width: 768px) {
+
+@media (min-width: 960px) {
   .conversation {
-    padding: var(--dimension-06);
+    width: auto;
+    max-width: 990px;
+    margin: 0 auto;
+    padding: var(--dimension-07);
+    border-radius: var(--radius-medium);
   }
 }
 
 .speech {
   width: 100%;
+  max-width: 980px;
   display: flex;
   align-items: flex-start;
-  margin-bottom: var(--dimension-06);
+  justify-content: center;
+  margin: 0 auto var(--dimension-07);
   flex-wrap: wrap;
   position: relative;
 }
 
+.speech:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 32px;
+  height: var(--dimension-07);
+  background: url('./scribble.svg');
+  background-size: cover;
+  bottom: 0;
+  transform: translateY(100%);
+  left: 40%;
+  opacity: 0.4;
+}
+
+.speech.reverse:after {
+  transform: translateY(100%) scaleX(-1);
+  left: auto;
+  right: 40%;
+}
+
 .speech:last-child {
   margin-bottom: 0;
+}
+
+.speech:last-child:after {
+  display: none;
 }
 
 @media (min-width: 768px) {
@@ -82,44 +142,41 @@
 }
 
 .speechBody {
-  flex: 1;
+  display: flex;
+  flex: 1 1 0;
   width: 100%;
+  max-width: 640px;
+  min-width: 0;
+}
+
+.speech.reverse .speechBody {
+  order: -1;
 }
 
 .speechBubble {
   width: 100%;
-  border: var(--border-hairline);
   border-radius: var(--radius-medium);
+  background: white;
+  box-shadow: var(--elevation-05);
   overflow: hidden;
-}
-
-.speech.reverse {
-  flex-direction: row-reverse;
+  position: relative;
+  z-index: 2;
 }
 
 .speechCharacter {
-  width: 60px;
-  height: 60px;
-  border-radius: 500vh;
-  overflow: hidden;
-  border: var(--border-hairline);
-  margin-bottom: var(--dimension-05);
-  position: absolute;
-  left: var(--dimension-04);
-  top: -10px;
+  display: none;
 }
 
 @media (min-width: 768px) {
   .speechCharacter {
-    width: 250px;
+    display: block;
+    width: 200px;
     height: auto;
     border-radius: 0;
     overflow: visible;
     border: none;
     margin-bottom: 0px;
-    position: static;
-    left: 0px;
-    top: 0px;
+    mix-blend-mode: darken;
   }
 }
 
@@ -130,52 +187,43 @@
 
 .speechContent {
   min-width: 300px;
-  padding: var(--dimension-06);
-  font-size: 90%;
-}
-
-.speech.comment .speechContent {
   padding: var(--dimension-04);
-}
-
-.speechContent p {
+  font-size: 90%;
   line-height: var(--lineHeight-medium);
-}
-
-.speechName {
-  line-height: var(--lineHeight-medium);
-  padding: var(--dimension-04) 0;
-  display: none;
-}
-
-.speechNameMobile {
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
 }
 
 @media (min-width: 768px) {
-  .speechNameMobile {
-    display: none;
+  .speechContent {
+    padding: var(--dimension-06);
   }
-
-  .speechName {
-    display: block;
-  }
-}
-
-.speech.reverse .speechName {
-  text-align: right;
 }
 
 .speechHeader {
-  border-bottom: var(--border-hairline);
-  height: var(--dimension-06);
-  background: var(--color-neutral-100);
+  border-bottom: var(--border-small);
   padding-left: 90px;
   display: flex;
   align-items: center;
-  padding-right: var(--dimension-04);
+  padding: var(--dimension-04);
 }
 
+@media (min-width: 768px) {
+  .speechHeader {
+    padding: var(--dimension-04) var(--dimension-06);
+  }
+}
 
+.speechAvatar {
+  margin-right: var(--dimension-04);
+  border-radius: var(--radius-circle);
+  width: var(--dimension-07);
+  height: var(--dimension-07);
+  background-size: 200%;
+  background-position: center top;
+  border: var(--border-small);
+}
+
+.speechUserRole {
+  margin-top: var(--dimension-01);
+  color: var(--color-neutral-500);
+  font-size: var(--fontSize-small);
+}
