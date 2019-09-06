@@ -1,4 +1,4 @@
-<center><img src="https://github.com/redbubble/react-get-to-know-you/raw/master/src/hero.png" /></center>
+<center><img width="250" src="https://github.com/redbubble/react-get-to-know-you/raw/master/src/hero.png" /></center>
 
 ### Redbubble - Frontend Engineer
 
