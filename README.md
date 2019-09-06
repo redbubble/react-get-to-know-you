@@ -1,3 +1,5 @@
+<center><img src="https://github.com/redbubble/react-get-to-know-you/raw/master/src/hero.png" /></center>
+
 ### Redbubble - Frontend Engineer
 
 A "get to know you" exercise for the role of Frontend Engineer in Redbubble's Design System team
