@@ -83,6 +83,7 @@
   width: 100%;
   background-color: var(--color-neutral-100);
   padding: var(--dimension-06) var(--dimension-04);
+  margin-bottom: var(--dimension-06);
 }
 
 
@@ -90,7 +91,8 @@
   .conversation {
     width: auto;
     max-width: 990px;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
     padding: var(--dimension-07);
     border-radius: var(--radius-medium);
   }

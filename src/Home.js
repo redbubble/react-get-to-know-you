@@ -173,12 +173,6 @@ const Home = () => (
 
     <section className={styles.section}>
       <div style={{ maxWidth: '640px' }}>
-        <div className={styles.callout} style={{ margin: '48px 0 48px' }}>
-          <p className={styles.text}>
-            <strong>Note: </strong>
-            For the sake of this exercise, it is ok to make assumptions about any questions you might have to make sure that you can proceed.
-          </p>
-        </div>
         <h2>
           <span role="img" aria-label="Laptop Icon">💻</span> Next steps...
         </h2>
@@ -211,21 +205,28 @@ const Home = () => (
           Draft the component
         </h3>
 
+        <div className={styles.callout} style={{ margin: '16px 0' }}>
+          <p className={styles.text}>
+            <strong>Note: </strong>
+            For the sake of this exercise, it is ok to make assumptions about any questions you might have to make sure that you can proceed with this step.
+          </p>
+        </div>
+
         <p className={styles.text}>
           Now that you've chimed in, have a go at <strong>coding</strong> the described component.
         </p>
 
-        <p className={styles.text}>
+        <h4 className={styles.text}>
           Some tips:
-        </p>
+        </h4>
 
         <ul className={styles.list}>
-          <li>Don't spend more than 2 hours on this exercise, we know your time is valuable <span aria-hidden="true">♥️</span></li>
+          <li>Don't spend more than 2 hours on this exercise, we know your time is valuable <span aria-hidden="true">♥️</span>.</li>
           <li>Your code <strong>does not need to be complete</strong> or production ready, just a good start that demonstrates your thinking and coding.</li>
           <li>You don't have all the answers, so make some assumptions, try some things out - it's ok to make mistakes.</li>
           <li>Don't sweat the visual details too much.</li>
-          <li>Code the way you like to code</li>
-          <li>We'll pair on your code later on in the interview process</li>
+          <li>Code the way you like to code.</li>
+          <li>We'll pair on your code later on in the interview process.</li>
         </ul>
 
         <p className={styles.text}>
@@ -237,7 +238,7 @@ const Home = () => (
             href="https://github.com/redbubble/react-get-to-know-you"
           >
             here
-          </a>
+          </a>.
         </p>
       </div>
     </section>
